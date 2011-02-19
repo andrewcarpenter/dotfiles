@@ -45,10 +45,6 @@ source ~/.bash/prompt.bash
 # `app` function
 source ~/.bash/app.bash
 
-# ALIASES
-alias realias='$EDITOR ~/.aliases; source ~/.aliases'
-source ~/.aliases
-
 # MISC
 source ~/.bash/misc.bash
 
