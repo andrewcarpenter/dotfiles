@@ -1,0 +1,30 @@
+# Instead of Control-a, make the escape/command character be Control-e
+escape ^Ee
+
+startup_message off             # bypass GPL notice (we're aware)
+defscrollback 15000             # big scrollback
+shell bash                      # don't start login shells
+# shelltitle ""                   # no title by default - set in PS1
+defmonitor on                   # turn on monitoring
+activity "<%n>"                 # let you know when stuff happens!
+silencewait 15                  # notify when window goes silent
+bell_msg "DING!"
+vbell_msg "DING!"
+vbell on
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+autodetach on
+
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+# copy screen clipboard to mac clipboard
+bind b eval "writebuf" "exec sh -c 'pbcopy < /tmp/screen-exchange'"
+
+# enable bold
+attrcolor b ".I"
+
+
+shelltitle "$ |bash"
+
+termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
+defhstatus "screen ^E (^Et) | $USER@^EH"
+hardstatus off
