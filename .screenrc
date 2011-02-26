@@ -1,5 +1,5 @@
-# Instead of Control-a, make the escape/command character be Control-e
-escape ^Ee
+# Instead of Control-a, make the escape/command character be a backtick
+escape ``
 
 startup_message off             # bypass GPL notice (we're aware)
 defscrollback 15000             # big scrollback
